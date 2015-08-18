@@ -8,16 +8,16 @@
 
 import Foundation
 import Alamofire
+import Gloss
 
 final class PLAPIService {
     
     typealias completionType = (response: PLResponsePackage) -> (Void)
     
-    
     final class func get(completion: completionType) -> Void {
         
         Alamofire
-            .request(.GET, PLEndPointConstants.getAllBooks)
+            .request(.GET, URLString: PLEndPointConstants.getAllBooks)
             .responseJSON {(request, response, JSON, error) in
                 
                 let responsePackage = PLResponsePackage()
@@ -31,7 +31,7 @@ final class PLAPIService {
    final class func post(completion: completionType) -> Void {
         
         Alamofire
-            .request(.POST, PLEndPointConstants.getAllBooks)
+            .request(.POST, URLString: PLEndPointConstants.getAllBooks)
             .responseJSON {(request, response, JSON, error) in
                 
                 let responsePackage = PLResponsePackage()

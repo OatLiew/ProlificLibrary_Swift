@@ -1,4 +1,4 @@
-// Validation.swift
+// Alamofire.swift
 //
 // Copyright (c) 2014–2015 Alamofire Software Foundation (http://alamofire.org/)
 //
@@ -27,21 +27,23 @@ extension Request {
     /**
         A closure used to validate a request that takes a URL request and URL response, and returns whether the request was valid.
     */
-    public typealias Validation = (NSURLRequest, NSHTTPURLResponse) -> Bool
+    public typealias Validation = (NSURLRequest?, NSHTTPURLResponse) -> Bool
 
     /**
         Validates the request, using the specified closure.
 
         If validation fails, subsequent calls to response handlers will have an associated error.
 
-        :param: validation A closure to validate the request.
+        - parameter validation: A closure to validate the request.
 
-        :returns: The request.
+        - returns: The request.
     */
     public func validate(validation: Validation) -> Self {
         delegate.queue.addOperationWithBlock {
-            if let response = self.response where self.delegate.error == nil && !validation(self.request, response) {
-                self.delegate.error = NSError(domain: AlamofireErrorDomain, code: -1, userInfo: nil)
+            if self.response != nil && self.delegate.error == nil {
+                if !validation(self.request, self.response!) {
+                    self.delegate.error = NSError(domain: AlamofireErrorDomain, code: -1, userInfo: nil)
+                }
             }
         }
 
@@ -55,13 +57,13 @@ extension Request {
 
         If validation fails, subsequent calls to response handlers will have an associated error.
 
-        :param: range The range of acceptable status codes.
+        - parameter range: The range of acceptable status codes.
 
-        :returns: The request.
+        - returns: The request.
     */
-    public func validate<S: SequenceType where S.Generator.Element == Int>(statusCode acceptableStatusCode: S) -> Self {
+    public func validate<S : SequenceType where S.Generator.Element == Int>(statusCode acceptableStatusCode: S) -> Self {
         return validate { _, response in
-            return contains(acceptableStatusCode, response.statusCode)
+            return acceptableStatusCode.contains(response.statusCode)
         }
     }
 
@@ -72,12 +74,9 @@ extension Request {
         let subtype: String
 
         init?(_ string: String) {
-            let components = string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-                                   .substringToIndex(string.rangeOfString(";")?.endIndex ?? string.endIndex)
-                                   .componentsSeparatedByString("/")
+            let components = string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).substringToIndex(string.rangeOfString(";")?.endIndex ?? string.endIndex).componentsSeparatedByString("/")
 
-            if let
-                type = components.first,
+            if let type = components.first,
                 subtype = components.last
             {
                 self.type = type
@@ -102,24 +101,19 @@ extension Request {
 
         If validation fails, subsequent calls to response handlers will have an associated error.
 
-        :param: contentType The acceptable content types, which may specify wildcard types and/or subtypes.
+        - parameter contentType: The acceptable content types, which may specify wildcard types and/or subtypes.
 
-        :returns: The request.
+        - returns: The request.
     */
     public func validate<S : SequenceType where S.Generator.Element == String>(contentType acceptableContentTypes: S) -> Self {
         return validate { _, response in
-            if let
-                responseContentType = response.MIMEType,
+            if let responseContentType = response.MIMEType,
                 responseMIMEType = MIMEType(responseContentType)
             {
                 for contentType in acceptableContentTypes {
-                    if let acceptableMIMEType = MIMEType(contentType) where acceptableMIMEType.matches(responseMIMEType) {
-                        return true
-                    }
-                }
-            } else {
-                for contentType in acceptableContentTypes {
-                    if let MIMEType = MIMEType(contentType) where MIMEType.type == "*" && MIMEType.subtype == "*" {
+                    if let acceptableMIMEType = MIMEType(contentType)
+                        where acceptableMIMEType.matches(responseMIMEType)
+                    {
                         return true
                     }
                 }
@@ -136,12 +130,12 @@ extension Request {
 
         If validation fails, subsequent calls to response handlers will have an associated error.
 
-        :returns: The request.
+        - returns: The request.
     */
     public func validate() -> Self {
         let acceptableStatusCodes: Range<Int> = 200..<300
         let acceptableContentTypes: [String] = {
-            if let accept = self.request.valueForHTTPHeaderField("Accept") {
+            if let accept = self.request?.valueForHTTPHeaderField("Accept") {
                 return accept.componentsSeparatedByString(",")
             }
 

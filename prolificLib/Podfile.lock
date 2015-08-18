@@ -1,37 +1,25 @@
 PODS:
-  - Alamofire (1.3.1)
+  - Alamofire (1.2.3)
   - Gloss (0.3.1):
     - Gloss/Extensions (= 0.3.1)
   - Gloss/Extensions (0.3.1)
-  - OMGHTTPURLRQ (2.1.3):
-    - OMGHTTPURLRQ/RQ (= 2.1.3)
-  - OMGHTTPURLRQ/FormURLEncode (2.1.3)
-  - OMGHTTPURLRQ/RQ (2.1.3):
-    - OMGHTTPURLRQ/FormURLEncode
-    - OMGHTTPURLRQ/UserAgent
-  - OMGHTTPURLRQ/UserAgent (2.1.3)
-  - PromiseKit (2.2.1):
-    - PromiseKit/Foundation (= 2.2.1)
-    - PromiseKit/QuartzCore (= 2.2.1)
-    - PromiseKit/UIKit (= 2.2.1)
-  - PromiseKit/CorePromise (2.2.1)
-  - PromiseKit/Foundation (2.2.1):
-    - OMGHTTPURLRQ (~> 2.1.3)
-    - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (2.2.1):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (2.2.1):
-    - PromiseKit/CorePromise
 
 DEPENDENCIES:
-  - Alamofire (~> 1.3)
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, commit `fd71afb3a0af2042b9f05a6b9f29317ad4903703`)
   - Gloss (~> 0.3)
-  - PromiseKit (~> 2.0)
+
+EXTERNAL SOURCES:
+  Alamofire:
+    :commit: fd71afb3a0af2042b9f05a6b9f29317ad4903703
+    :git: https://github.com/Alamofire/Alamofire.git
+
+CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: fd71afb3a0af2042b9f05a6b9f29317ad4903703
+    :git: https://github.com/Alamofire/Alamofire.git
 
 SPEC CHECKSUMS:
-  Alamofire: e4ab637e3195b645c814b87a652373439e59f2a4
+  Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
   Gloss: 4393347bea46ac05f2516179da5eb895b485d7d5
-  OMGHTTPURLRQ: c4268dea4295b585d711055dbcd87bfa82badd5f
-  PromiseKit: 9c92257e39abf4b634533d44268592dfc6e4b5c2
 
 COCOAPODS: 0.38.2

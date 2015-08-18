@@ -8,11 +8,13 @@
 
 import UIKit
 import Alamofire
+import Gloss
 
 class PLMasterViewController: UITableViewController {
 
-    var items: [String] = ["We", "Heart", "Swift"];
-
+    var bookArrays = [];
+    
+    
     // Mark: - View Lifecycle
     
     override func awakeFromNib() {
@@ -23,19 +25,21 @@ class PLMasterViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         getAllBooks()
+        self.tableView .reloadData()
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     private func getAllBooks(){
-        
         PLAPIService.get() {responsePackage -> Void in
             if((responsePackage.error) === nil){
-                print(responsePackage.response)
+                self.bookArrays = responsePackage.response as! [AnyObject]
             }
             else{
                 print(responsePackage.error)
@@ -43,29 +47,24 @@ class PLMasterViewController: UITableViewController {
         }
     }
     
+    // MARK: - UITableViewDataSource
 
-}
-
-// MARK: - UITableViewDataSource
-
-extension PLMasterViewController: UITableViewDataSource {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count;
+        return self.bookArrays.count;
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("LabelCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("LabelCell", forIndexPath: indexPath)
         
-        cell.textLabel?.text = "Section \(indexPath.section) Row \(indexPath.row) \(items[indexPath.row])"
+        let book = PLBook.fromJSON(self.bookArrays[indexPath.row] as! JSON)
+        cell.textLabel?.text = book.title! + book.author!
         
         return cell
     }
-}
 
-// MARK: - UITableViewDelegate
-
-extension PLMasterViewController: UITableViewDelegate {
+    // MARK: - UITableViewDelegate
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1;
     }
@@ -73,6 +72,5 @@ extension PLMasterViewController: UITableViewDelegate {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 100;
     }
+
 }
-
-

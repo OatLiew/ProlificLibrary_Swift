@@ -17,6 +17,7 @@
 		310B2B911B814C0700BFB505 /* PLAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310B2B901B814C0700BFB505 /* PLAPIService.swift */; };
 		310B2B931B81529300BFB505 /* PLResponsePackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310B2B921B81529300BFB505 /* PLResponsePackage.swift */; };
 		310B2B951B816D2700BFB505 /* PLEndPointConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310B2B941B816D2700BFB505 /* PLEndPointConstants.swift */; };
+		3183735D1B8236CE00FF402C /* PLBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3183735C1B8236CE00FF402C /* PLBook.swift */; };
 		D8F76F19FB5879EC29CFBFD0 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5818BFE0766F976B2C1C8439 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		310B2B901B814C0700BFB505 /* PLAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLAPIService.swift; sourceTree = "<group>"; };
 		310B2B921B81529300BFB505 /* PLResponsePackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLResponsePackage.swift; sourceTree = "<group>"; };
 		310B2B941B816D2700BFB505 /* PLEndPointConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLEndPointConstants.swift; sourceTree = "<group>"; };
+		3183735C1B8236CE00FF402C /* PLBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLBook.swift; sourceTree = "<group>"; };
 		5818BFE0766F976B2C1C8439 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF0A07FB66E4C8DA9D71026C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EE63284D9BADA344937CA28E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		310B2B811B8109E500BFB505 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3183735C1B8236CE00FF402C /* PLBook.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -236,7 +239,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Phong Liew";
 				TargetAttributes = {
 					310B2B581B81097A00BFB505 = {
@@ -346,6 +349,7 @@
 				310B2B631B81097A00BFB505 /* PLSecondViewController.swift in Sources */,
 				310B2B5F1B81097A00BFB505 /* AppDelegate.swift in Sources */,
 				310B2B611B81097A00BFB505 /* PLMasterViewController.swift in Sources */,
+				3183735D1B8236CE00FF402C /* PLBook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +412,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -477,6 +482,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = prolificLib/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "prolific.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -488,6 +494,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = prolificLib/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "prolific.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -506,6 +513,7 @@
 				);
 				INFOPLIST_FILE = prolificLibTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "prolific.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/prolificLib.app/prolificLib";
 			};
@@ -521,6 +529,7 @@
 				);
 				INFOPLIST_FILE = prolificLibTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "prolific.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/prolificLib.app/prolificLib";
 			};
