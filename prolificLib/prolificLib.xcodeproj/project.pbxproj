@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		310B2B5F1B81097A00BFB505 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310B2B5E1B81097A00BFB505 /* AppDelegate.swift */; };
 		310B2B611B81097A00BFB505 /* PLMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310B2B601B81097A00BFB505 /* PLMasterViewController.swift */; };
-		310B2B631B81097A00BFB505 /* PLSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310B2B621B81097A00BFB505 /* PLSecondViewController.swift */; };
+		310B2B631B81097A00BFB505 /* PLDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310B2B621B81097A00BFB505 /* PLDetailViewController.swift */; };
 		310B2B661B81097A00BFB505 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 310B2B641B81097A00BFB505 /* Main.storyboard */; };
 		310B2B681B81097A00BFB505 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 310B2B671B81097A00BFB505 /* Images.xcassets */; };
 		310B2B6B1B81097A00BFB505 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 310B2B691B81097A00BFB505 /* LaunchScreen.xib */; };
@@ -17,6 +17,7 @@
 		310B2B911B814C0700BFB505 /* PLAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310B2B901B814C0700BFB505 /* PLAPIService.swift */; };
 		310B2B931B81529300BFB505 /* PLResponsePackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310B2B921B81529300BFB505 /* PLResponsePackage.swift */; };
 		310B2B951B816D2700BFB505 /* PLEndPointConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310B2B941B816D2700BFB505 /* PLEndPointConstants.swift */; };
+		315ED93A1B83B030005EDE3A /* PLAddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315ED9391B83B030005EDE3A /* PLAddBookViewController.swift */; };
 		3183735D1B8236CE00FF402C /* PLBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3183735C1B8236CE00FF402C /* PLBook.swift */; };
 		D8F76F19FB5879EC29CFBFD0 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5818BFE0766F976B2C1C8439 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -36,7 +37,7 @@
 		310B2B5D1B81097A00BFB505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		310B2B5E1B81097A00BFB505 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		310B2B601B81097A00BFB505 /* PLMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLMasterViewController.swift; sourceTree = "<group>"; };
-		310B2B621B81097A00BFB505 /* PLSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLSecondViewController.swift; sourceTree = "<group>"; };
+		310B2B621B81097A00BFB505 /* PLDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLDetailViewController.swift; sourceTree = "<group>"; };
 		310B2B651B81097A00BFB505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		310B2B671B81097A00BFB505 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		310B2B6A1B81097A00BFB505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 		310B2B901B814C0700BFB505 /* PLAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLAPIService.swift; sourceTree = "<group>"; };
 		310B2B921B81529300BFB505 /* PLResponsePackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLResponsePackage.swift; sourceTree = "<group>"; };
 		310B2B941B816D2700BFB505 /* PLEndPointConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLEndPointConstants.swift; sourceTree = "<group>"; };
+		315ED9391B83B030005EDE3A /* PLAddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLAddBookViewController.swift; sourceTree = "<group>"; };
 		3183735C1B8236CE00FF402C /* PLBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLBook.swift; sourceTree = "<group>"; };
 		5818BFE0766F976B2C1C8439 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF0A07FB66E4C8DA9D71026C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,7 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				310B2B601B81097A00BFB505 /* PLMasterViewController.swift */,
-				310B2B621B81097A00BFB505 /* PLSecondViewController.swift */,
+				310B2B621B81097A00BFB505 /* PLDetailViewController.swift */,
+				315ED9391B83B030005EDE3A /* PLAddBookViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -346,10 +349,11 @@
 				310B2B931B81529300BFB505 /* PLResponsePackage.swift in Sources */,
 				310B2B951B816D2700BFB505 /* PLEndPointConstants.swift in Sources */,
 				310B2B911B814C0700BFB505 /* PLAPIService.swift in Sources */,
-				310B2B631B81097A00BFB505 /* PLSecondViewController.swift in Sources */,
+				310B2B631B81097A00BFB505 /* PLDetailViewController.swift in Sources */,
 				310B2B5F1B81097A00BFB505 /* AppDelegate.swift in Sources */,
 				310B2B611B81097A00BFB505 /* PLMasterViewController.swift in Sources */,
 				3183735D1B8236CE00FF402C /* PLBook.swift in Sources */,
+				315ED93A1B83B030005EDE3A /* PLAddBookViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

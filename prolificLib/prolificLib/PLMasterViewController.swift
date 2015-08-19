@@ -20,14 +20,13 @@ class PLMasterViewController: UITableViewController {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        navigationItem.title = "Books";
+        // navigationItem.title = "Books";
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         getAllBooks()
-        self.tableView .reloadData()
         
     }
     
@@ -36,15 +35,19 @@ class PLMasterViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Mark: - Private Function
+    
     private func getAllBooks(){
-        PLAPIService.get() {responsePackage -> Void in
+        PLAPIService.get( {responsePackage -> Void in
             if((responsePackage.error) === nil){
                 self.bookArrays = responsePackage.response as! [AnyObject]
+                self.tableView .reloadData()
+                
             }
             else{
                 print(responsePackage.error)
             }
-        }
+        })
     }
     
     // MARK: - UITableViewDataSource
@@ -58,12 +61,22 @@ class PLMasterViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("LabelCell", forIndexPath: indexPath)
         
         let book = PLBook.fromJSON(self.bookArrays[indexPath.row] as! JSON)
-        cell.textLabel?.text = book.title! + book.author!
+        cell.textLabel?.text = book.title
+        cell.detailTextLabel?.text = book.author
         
         return cell
     }
 
     // MARK: - UITableViewDelegate
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let row = indexPath.row
+        
+        self.performSegueWithIdentifier("showDetail", sender: self)
+        
+        print(row)
+    }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1;
@@ -73,4 +86,12 @@ class PLMasterViewController: UITableViewController {
         return 100;
     }
 
+    
+    // MARK: - UIStoryboardSegueSegue
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        if segue.identifier == "showDetail" {
+        }
+    }
 }

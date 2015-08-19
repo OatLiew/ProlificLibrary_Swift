@@ -8,7 +8,7 @@
 
 import Gloss
 
-struct PLBook: Decodable {
+struct PLBook: Glossy {
     
     let author: String?
     let categories: String?
@@ -33,4 +33,18 @@ struct PLBook: Decodable {
         )
     }
     
+    // MARK: - Serialization
+    
+    func toJSON() -> JSON? {
+        
+        return jsonify([
+            "author" ~~> self.author,
+            "categories" ~~> self.categories,
+            "lastCheckedOut" ~~> self.lastCheckedOut,
+            "lastCheckedOutBy" ~~> self.lastCheckedOutBy,
+            "publisher" ~~> self.publisher,
+            "title" ~~> self.title,
+            "url" ~~> self.url,
+        ])
+    }
 }
