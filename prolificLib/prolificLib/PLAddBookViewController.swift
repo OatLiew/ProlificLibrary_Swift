@@ -11,7 +11,6 @@ import Gloss
 
 class PLAddBookViewController: UITableViewController {
     
-    
     @IBOutlet weak var bookTitle: UITextField!
     @IBOutlet weak var author: UITextField!
     @IBOutlet weak var publisher: UITextField!
@@ -21,6 +20,8 @@ class PLAddBookViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.separatorColor = UIColor .clearColor();
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -64,12 +65,22 @@ class PLAddBookViewController: UITableViewController {
         PLAPIService.post( parameters, completion: {responsePackage -> Void in
             
             if((responsePackage.error) === nil){
-                
+                print("Post a book")
+                self.clearText()
             }
             else{
                 print(responsePackage.error)
             }
         })
+    }
+    
+    private func clearText(){
+        
+        self.author.text = ""
+        self.categories.text = ""
+        self.publisher.text = ""
+        self.bookTitle.text = ""
+    
     }
 
 }

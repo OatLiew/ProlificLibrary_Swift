@@ -14,6 +14,7 @@ final class PLAPIService {
     
     typealias completionType = (response: PLResponsePackage) -> (Void)
     
+    
     final class func get( completion: completionType) -> Void {
 
         Alamofire
@@ -41,6 +42,19 @@ final class PLAPIService {
                 completion(response: responsePackage)
         }
     }
-
+    
+    final class func get( url: String, completion: completionType) -> Void {
+        
+        Alamofire
+            .request(.GET, URLString: PLEndPointConstants.baseURL + url)
+            .responseJSON {(request, response, JSON, error) in
+                
+                let responsePackage = PLResponsePackage()
+                responsePackage.response = JSON
+                responsePackage.success = true
+                responsePackage.error = error
+                completion(response: responsePackage)
+        }
+    }
     
 }

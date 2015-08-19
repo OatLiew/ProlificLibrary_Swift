@@ -7,13 +7,26 @@
 //
 
 import UIKit
+import Gloss
 
 class PLDetailViewController: UIViewController {
 
+    
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var authorLbl: UILabel!
+    @IBOutlet weak var publisherLbl: UILabel!
+    @IBOutlet weak var categoriesLbl: UILabel!
+    @IBOutlet weak var lastCheckLbl: UILabel!
+    @IBOutlet weak var checkOutByLbl: UILabel!
+    
+    var urlStr : String = ""
+    
     // Mark: - View Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        getBook(urlStr)
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -28,6 +41,31 @@ class PLDetailViewController: UIViewController {
         self.dismissViewControllerAnimated(false, completion: nil)
         
     }
+    
+    
+    // Mark: - Private
+    
+    private func getBook( url : String ){
+        
+        PLAPIService.get( url, completion: {responsePackage -> Void in
+            
+            if((responsePackage.error) === nil){
+                
+                let book = PLBook.fromJSON(responsePackage.response as! JSON)
+                self.titleLbl.text = book.title
+                self.authorLbl.text = book.author
+                self.publisherLbl.text = book.publisher
+                self.categoriesLbl.text = book.categories
+                self.lastCheckLbl.text = book.lastCheckedOut
+                self.checkOutByLbl.text = book.lastCheckedOut
+                
+            }
+            else{
+                print(responsePackage.error)
+            }
+        })
+    }
+
     
 }
 

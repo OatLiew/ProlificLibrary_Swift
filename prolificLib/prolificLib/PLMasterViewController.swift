@@ -73,7 +73,9 @@ class PLMasterViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let row = indexPath.row
         
-        self.performSegueWithIdentifier("showDetail", sender: self)
+        let book = PLBook.fromJSON(self.bookArrays[indexPath.row] as! JSON)
+
+        self.performSegueWithIdentifier("showDetail", sender: book.url)
         
         print(row)
     }
@@ -92,6 +94,13 @@ class PLMasterViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         if segue.identifier == "showDetail" {
+            
+            let nav = segue.destinationViewController as! UINavigationController
+            let detailViewController = nav.topViewController as! PLDetailViewController
+
+            let url = sender as! String
+            detailViewController.urlStr = url
+
         }
     }
 }
