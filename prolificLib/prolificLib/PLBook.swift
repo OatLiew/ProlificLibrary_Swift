@@ -20,17 +20,14 @@ struct PLBook: Glossy {
     
     // MARK: - Deserialization
     
-    static func fromJSON(json: JSON) -> PLBook {
-        
-        return PLBook(
-            author:             "author" <~~ json,
-            categories:         "categories" <~~ json,
-            lastCheckedOut:     "lastCheckedOut" <~~ json,
-            lastCheckedOutBy:   "lastCheckedOutBy" <~~ json,
-            publisher:          "publisher" <~~ json,
-            title:              "title" <~~ json,
-            url:                "url" <~~ json
-        )
+    init?(json: JSON) {
+        self.author = "author" <~~ json
+        self.categories = "categories" <~~ json
+        self.lastCheckedOut = "lastCheckedOut" <~~ json
+        self.lastCheckedOutBy = "lastCheckedOutBy" <~~ json
+        self.publisher = "publisher" <~~ json
+        self.title = "title" <~~ json
+        self.url = "url" <~~ json
     }
     
     // MARK: - Serialization

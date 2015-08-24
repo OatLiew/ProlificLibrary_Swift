@@ -51,13 +51,13 @@ class PLDetailViewController: UIViewController {
             
             if((responsePackage.error) === nil){
                 
-                let book = PLBook.fromJSON(responsePackage.response as! JSON)
-                self.titleLbl.text = book.title
-                self.authorLbl.text = book.author
-                self.publisherLbl.text = book.publisher
-                self.categoriesLbl.text = book.categories
-                self.lastCheckLbl.text = book.lastCheckedOut
-                self.checkOutByLbl.text = book.lastCheckedOut
+                let book = PLBook.init(json : responsePackage.response as! JSON)
+                self.titleLbl.text = book!.title
+                self.authorLbl.text = book!.author
+                self.publisherLbl.text = book!.publisher
+                self.categoriesLbl.text = book!.categories
+                self.lastCheckLbl.text = book!.lastCheckedOut
+                self.checkOutByLbl.text = book!.lastCheckedOut
                 
             }
             else{

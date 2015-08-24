@@ -14,13 +14,11 @@ class PLMasterViewController: UITableViewController {
 
     var bookArrays = [];
     
-    
     // Mark: - View Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // navigationItem.title = "Books";
     }
     
     override func viewDidLoad() {
@@ -60,9 +58,9 @@ class PLMasterViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("LabelCell", forIndexPath: indexPath)
         
-        let book = PLBook.fromJSON(self.bookArrays[indexPath.row] as! JSON)
-        cell.textLabel?.text = book.title
-        cell.detailTextLabel?.text = book.author
+        let book = PLBook.init(json: self.bookArrays[indexPath.row] as! JSON)
+        cell.textLabel?.text = book!.title
+        cell.detailTextLabel?.text = book!.author
         
         return cell
     }
@@ -73,9 +71,9 @@ class PLMasterViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let row = indexPath.row
         
-        let book = PLBook.fromJSON(self.bookArrays[indexPath.row] as! JSON)
+        let book = PLBook.init(json: self.bookArrays[indexPath.row] as! JSON)
 
-        self.performSegueWithIdentifier("showDetail", sender: book.url)
+        self.performSegueWithIdentifier("showDetail", sender: book!.url)
         
         print(row)
     }
