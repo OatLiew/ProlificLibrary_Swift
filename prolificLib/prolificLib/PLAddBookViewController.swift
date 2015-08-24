@@ -51,11 +51,10 @@ class PLAddBookViewController: UITableViewController {
                 "lastCheckedOut" : "",
                 "lastCheckedOutBy" : "",
                 "publisher" : self.publisher.text! as String,
-                "title" : self.bookTitle.text! as String,
-                "url": ""
+                "title" : self.bookTitle.text! as String
             ]
             
-            postBook(book)
+            self.postBook(book)
         }
     }
     

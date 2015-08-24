@@ -57,4 +57,19 @@ final class PLAPIService {
         }
     }
     
+    final class func put( url: String, parameters: JSON, completion: completionType) -> Void {
+        
+        Alamofire
+            .request(.PUT, URLString: PLEndPointConstants.baseURL + url, parameters: parameters)
+            .responseJSON {(request, response, JSON, error) in
+                
+                let responsePackage = PLResponsePackage()
+                responsePackage.response = JSON
+                responsePackage.success = true
+                responsePackage.error = error
+                completion(response: responsePackage)
+        }
+    }
+
+    
 }

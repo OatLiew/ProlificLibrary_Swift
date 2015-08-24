@@ -3,4 +3,6 @@ platform :ios, '8.0'
 use_frameworks!
 
 pod 'Gloss', '~> 0.3'
+pod 'Quick', '~> 0.5.0'
+pod 'Nimble', '2.0.0-rc.2'
 pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :commit => 'fd71afb3a0af2042b9f05a6b9f29317ad4903703'
