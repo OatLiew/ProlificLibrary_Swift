@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FB1DA035233C66C5C30B1753"
+               BlueprintIdentifier = "48DF5B4B81B9FF3F4E2521AF"
                BuildableName = "Gloss.framework"
                BlueprintName = "Gloss"
                ReferencedContainer = "container:Pods.xcodeproj">

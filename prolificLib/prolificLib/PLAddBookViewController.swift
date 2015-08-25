@@ -45,16 +45,16 @@ class PLAddBookViewController: UITableViewController {
         }
         else{
             
-            let book = PLBook(
-                author: self.author.text! as String,
-                categories: self.categories.text! as String,
-                lastCheckedOut: "",
-                lastCheckedOutBy: "",
-                publisher: self.publisher.text! as String,
-                title: self.bookTitle.text! as String,
-                url: ""
-            )
-            self.postBook(book.toJSON()!)
+//            let book = PLBook(
+//                author: self.author.text! as String,
+//                categories: self.categories.text! as String,
+//                lastCheckedOut: "",
+//                lastCheckedOutBy: "",
+//                publisher: self.publisher.text! as String,
+//                title: self.bookTitle.text! as String,
+//                url: ""
+//            )
+//            self.postBook(book.toJSON()!)
         }
     }
     
@@ -62,16 +62,16 @@ class PLAddBookViewController: UITableViewController {
     
     private func postBook( parameters : JSON ){
         
-        PLAPIService.post( parameters, completion: {responsePackage -> Void in
-            
-            if((responsePackage.error) === nil){
-                print("Post a book")
-                self.clearText()
-            }
-            else{
-                print(responsePackage.error)
-            }
-        })
+//        PLAPIService.post( parameters, completion: {responsePackage -> Void in
+//            
+//            if((responsePackage.error) === nil){
+//                print("Post a book")
+//                self.clearText()
+//            }
+//            else{
+//                print(responsePackage.error)
+//            }
+//        })
     }
     
     private func clearText(){

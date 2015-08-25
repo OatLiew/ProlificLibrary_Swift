@@ -6,9 +6,7 @@
 //  Copyright (c) 2015 Phong Liew. All rights reserved.
 //
 
-import Gloss
-
-struct PLBook: Glossy {
+internal struct PLBook: JSONSerializable {
     
     let author: String?
     let categories: String?
@@ -17,7 +15,7 @@ struct PLBook: Glossy {
     let publisher: String?
     let title: String?
     let url: String?
-    
+
     init(author: String, categories: String, lastCheckedOut: String, lastCheckedOutBy: String, publisher: String, title: String, url: String?){
         
         self.author = author
@@ -29,30 +27,39 @@ struct PLBook: Glossy {
         self.url = url
     }
     
-    
     // MARK: - Deserialization
     init?(json: JSON) {
-        self.author = "author" <~~ json
-        self.categories = "categories" <~~ json
-        self.lastCheckedOut = "lastCheckedOut" <~~ json
-        self.lastCheckedOutBy = "lastCheckedOutBy" <~~ json
-        self.publisher = "publisher" <~~ json
-        self.title = "title" <~~ json
-        self.url = "url" <~~ json
-    }
-    
-    // MARK: - Serialization
-    
-    func toJSON() -> JSON? {
+        guard   let author: String = json.valueFor("author"),
+                let categories: String = json.valueFor("categories"),
+                let lastCheckedOut: String = json.valueFor("lastCheckedOut"),
+                let lastCheckedOutBy: String = json.valueFor("lastCheckedOutBy"),
+                let publisher: String = json.valueFor("publisher"),
+                let title: String = json.valueFor("title"),
+                let url: String = json.valueFor("url")
+        else{
+            return nil
+        }
         
-        return jsonify([
-            "author" ~~> self.author,
-            "categories" ~~> self.categories,
-            "lastCheckedOut" ~~> self.lastCheckedOut,
-            "lastCheckedOutBy" ~~> self.lastCheckedOutBy,
-            "publisher" ~~> self.publisher,
-            "title" ~~> self.title,
-            "url" ~~> self.url,
-        ])
+        self.author = author
+        self.categories = categories
+        self.lastCheckedOut = lastCheckedOut
+        self.lastCheckedOutBy = lastCheckedOutBy
+        self.publisher = publisher
+        self.title = title
+        self.url = url
+    }
+
+    internal func JSONRepresentation() -> JSON? {
+        var json = MutableJSON()
+        json["author"] = self.author
+        json["categories"] = self.categories
+        json["lastCheckedOut"] = self.lastCheckedOut
+        json["lastCheckedOutBy"] = self.lastCheckedOutBy
+        json["publisher"] = self.publisher
+        json["title"] = self.title
+        json["url"] = self.url
+        
+        return json.jsonValue
+
     }
 }

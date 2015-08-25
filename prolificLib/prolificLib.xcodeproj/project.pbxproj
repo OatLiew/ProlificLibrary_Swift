@@ -19,6 +19,19 @@
 		310B2B951B816D2700BFB505 /* PLEndPointConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310B2B941B816D2700BFB505 /* PLEndPointConstants.swift */; };
 		315ED93A1B83B030005EDE3A /* PLAddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315ED9391B83B030005EDE3A /* PLAddBookViewController.swift */; };
 		3183735D1B8236CE00FF402C /* PLBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3183735C1B8236CE00FF402C /* PLBook.swift */; };
+		31E09C801B8CE3910040FFBD /* APIEnvironmentContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E09C7A1B8CE3910040FFBD /* APIEnvironmentContext.swift */; };
+		31E09C811B8CE3910040FFBD /* APIEnvironmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E09C7B1B8CE3910040FFBD /* APIEnvironmentManager.swift */; };
+		31E09C821B8CE3910040FFBD /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E09C7C1B8CE3910040FFBD /* Method.swift */; };
+		31E09C831B8CE3910040FFBD /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E09C7D1B8CE3910040FFBD /* Request.swift */; };
+		31E09C841B8CE3910040FFBD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E09C7E1B8CE3910040FFBD /* Response.swift */; };
+		31E09C851B8CE3910040FFBD /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E09C7F1B8CE3910040FFBD /* SessionManager.swift */; };
+		31E09C8B1B8CE3AB0040FFBD /* APIResponseCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E09C861B8CE3AB0040FFBD /* APIResponseCollection.swift */; };
+		31E09C8C1B8CE3AB0040FFBD /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E09C871B8CE3AB0040FFBD /* JSON.swift */; };
+		31E09C8D1B8CE3AB0040FFBD /* JSONSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E09C881B8CE3AB0040FFBD /* JSONSerializable.swift */; };
+		31E09C8E1B8CE3AB0040FFBD /* JSONTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E09C891B8CE3AB0040FFBD /* JSONTransformer.swift */; };
+		31E09C8F1B8CE3AB0040FFBD /* MutableJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E09C8A1B8CE3AB0040FFBD /* MutableJSON.swift */; };
+		31E09C931B8CE4FE0040FFBD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E09C921B8CE4FE0040FFBD /* Endpoint.swift */; };
+		31E09C951B8CEA780040FFBD /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E09C941B8CEA780040FFBD /* APIEnvironment.swift */; };
 		D8F76F19FB5879EC29CFBFD0 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5818BFE0766F976B2C1C8439 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -49,6 +62,19 @@
 		310B2B941B816D2700BFB505 /* PLEndPointConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLEndPointConstants.swift; sourceTree = "<group>"; };
 		315ED9391B83B030005EDE3A /* PLAddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLAddBookViewController.swift; sourceTree = "<group>"; };
 		3183735C1B8236CE00FF402C /* PLBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLBook.swift; sourceTree = "<group>"; };
+		31E09C7A1B8CE3910040FFBD /* APIEnvironmentContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIEnvironmentContext.swift; path = Networking/API/APIEnvironmentContext.swift; sourceTree = "<group>"; };
+		31E09C7B1B8CE3910040FFBD /* APIEnvironmentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIEnvironmentManager.swift; path = Networking/API/APIEnvironmentManager.swift; sourceTree = "<group>"; };
+		31E09C7C1B8CE3910040FFBD /* Method.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Method.swift; path = Networking/API/Method.swift; sourceTree = "<group>"; };
+		31E09C7D1B8CE3910040FFBD /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Networking/API/Request.swift; sourceTree = "<group>"; };
+		31E09C7E1B8CE3910040FFBD /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Networking/API/Response.swift; sourceTree = "<group>"; };
+		31E09C7F1B8CE3910040FFBD /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Networking/API/SessionManager.swift; sourceTree = "<group>"; };
+		31E09C861B8CE3AB0040FFBD /* APIResponseCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIResponseCollection.swift; path = Networking/JSON/APIResponseCollection.swift; sourceTree = "<group>"; };
+		31E09C871B8CE3AB0040FFBD /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSON.swift; path = Networking/JSON/JSON.swift; sourceTree = "<group>"; };
+		31E09C881B8CE3AB0040FFBD /* JSONSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONSerializable.swift; path = Networking/JSON/JSONSerializable.swift; sourceTree = "<group>"; };
+		31E09C891B8CE3AB0040FFBD /* JSONTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONTransformer.swift; path = Networking/JSON/JSONTransformer.swift; sourceTree = "<group>"; };
+		31E09C8A1B8CE3AB0040FFBD /* MutableJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MutableJSON.swift; path = Networking/JSON/MutableJSON.swift; sourceTree = "<group>"; };
+		31E09C921B8CE4FE0040FFBD /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Endpoint.swift; path = Networking/Endpoint.swift; sourceTree = "<group>"; };
+		31E09C941B8CEA780040FFBD /* APIEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIEnvironment.swift; path = Networking/APIEnvironment.swift; sourceTree = "<group>"; };
 		5818BFE0766F976B2C1C8439 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF0A07FB66E4C8DA9D71026C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EE63284D9BADA344937CA28E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +196,7 @@
 		310B2B831B810A3800BFB505 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				31E09C771B8CE3400040FFBD /* Networking */,
 				310B2B961B816D7000BFB505 /* APIservice */,
 			);
 			name = Services;
@@ -183,6 +210,42 @@
 				310B2B941B816D2700BFB505 /* PLEndPointConstants.swift */,
 			);
 			name = APIservice;
+			sourceTree = "<group>";
+		};
+		31E09C771B8CE3400040FFBD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				31E09C941B8CEA780040FFBD /* APIEnvironment.swift */,
+				31E09C921B8CE4FE0040FFBD /* Endpoint.swift */,
+				31E09C791B8CE3790040FFBD /* JSON */,
+				31E09C781B8CE3620040FFBD /* API */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		31E09C781B8CE3620040FFBD /* API */ = {
+			isa = PBXGroup;
+			children = (
+				31E09C7A1B8CE3910040FFBD /* APIEnvironmentContext.swift */,
+				31E09C7B1B8CE3910040FFBD /* APIEnvironmentManager.swift */,
+				31E09C7C1B8CE3910040FFBD /* Method.swift */,
+				31E09C7D1B8CE3910040FFBD /* Request.swift */,
+				31E09C7E1B8CE3910040FFBD /* Response.swift */,
+				31E09C7F1B8CE3910040FFBD /* SessionManager.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		31E09C791B8CE3790040FFBD /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				31E09C861B8CE3AB0040FFBD /* APIResponseCollection.swift */,
+				31E09C871B8CE3AB0040FFBD /* JSON.swift */,
+				31E09C881B8CE3AB0040FFBD /* JSONSerializable.swift */,
+				31E09C891B8CE3AB0040FFBD /* JSONTransformer.swift */,
+				31E09C8A1B8CE3AB0040FFBD /* MutableJSON.swift */,
+			);
+			name = JSON;
 			sourceTree = "<group>";
 		};
 		DB481B2B7C85F9FDCB1DE6E9 /* Pods */ = {
@@ -347,12 +410,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				310B2B931B81529300BFB505 /* PLResponsePackage.swift in Sources */,
+				31E09C831B8CE3910040FFBD /* Request.swift in Sources */,
+				31E09C951B8CEA780040FFBD /* APIEnvironment.swift in Sources */,
 				310B2B951B816D2700BFB505 /* PLEndPointConstants.swift in Sources */,
 				310B2B911B814C0700BFB505 /* PLAPIService.swift in Sources */,
+				31E09C801B8CE3910040FFBD /* APIEnvironmentContext.swift in Sources */,
+				31E09C8D1B8CE3AB0040FFBD /* JSONSerializable.swift in Sources */,
+				31E09C841B8CE3910040FFBD /* Response.swift in Sources */,
 				310B2B631B81097A00BFB505 /* PLDetailViewController.swift in Sources */,
+				31E09C851B8CE3910040FFBD /* SessionManager.swift in Sources */,
 				310B2B5F1B81097A00BFB505 /* AppDelegate.swift in Sources */,
 				310B2B611B81097A00BFB505 /* PLMasterViewController.swift in Sources */,
+				31E09C8F1B8CE3AB0040FFBD /* MutableJSON.swift in Sources */,
+				31E09C8B1B8CE3AB0040FFBD /* APIResponseCollection.swift in Sources */,
+				31E09C821B8CE3910040FFBD /* Method.swift in Sources */,
+				31E09C931B8CE4FE0040FFBD /* Endpoint.swift in Sources */,
 				3183735D1B8236CE00FF402C /* PLBook.swift in Sources */,
+				31E09C8E1B8CE3AB0040FFBD /* JSONTransformer.swift in Sources */,
+				31E09C8C1B8CE3AB0040FFBD /* JSON.swift in Sources */,
+				31E09C811B8CE3910040FFBD /* APIEnvironmentManager.swift in Sources */,
 				315ED93A1B83B030005EDE3A /* PLAddBookViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -72,52 +72,52 @@ class PLDetailViewController: UIViewController {
     
     private func getBook( url : String ){
         
-        PLAPIService.get( url, completion: {responsePackage -> Void in
-            
-            if((responsePackage.error) === nil){
-                
-                let book = PLBook.init(json : responsePackage.response as! JSON)
-                
-                self.titleLbl.text = book!.title
-                self.authorLbl.text = book!.author
-                self.publisherLbl.text = book!.publisher
-                self.categoriesLbl.text = book!.categories
-                self.lastCheckLbl.text = book!.lastCheckedOut
-                self.checkOutByLbl.text = book!.lastCheckedOutBy
-                
-            }
-            else{
-                print(responsePackage.error)
-            }
-        })
+//        PLAPIService.get( url, completion: {responsePackage -> Void in
+//            
+//            if((responsePackage.error) === nil){
+//                
+//                let book = PLBook.init(json : responsePackage.response as! JSON)
+//                
+//                self.titleLbl.text = book!.title
+//                self.authorLbl.text = book!.author
+//                self.publisherLbl.text = book!.publisher
+//                self.categoriesLbl.text = book!.categories
+//                self.lastCheckLbl.text = book!.lastCheckedOut
+//                self.checkOutByLbl.text = book!.lastCheckedOutBy
+//                
+//            }
+//            else{
+//                print(responsePackage.error)
+//            }
+//        })
     }
     
     private func putBook(lastCheckedOutBy : String){
         
-        let book = PLBook(
-            author: self.authorLbl.text! as String,
-            categories: self.categoriesLbl.text! as String,
-            lastCheckedOut: "",
-            lastCheckedOutBy: lastCheckedOutBy,
-            publisher: self.publisherLbl.text! as String,
-            title: self.titleLbl.text! as String,
-            url: self.urlStr
-        )
-        
-        self.putBook(self.urlStr, parameters: book.toJSON()!);
+//        let book = PLBook(
+//            author: self.authorLbl.text! as String,
+//            categories: self.categoriesLbl.text! as String,
+//            lastCheckedOut: "",
+//            lastCheckedOutBy: lastCheckedOutBy,
+//            publisher: self.publisherLbl.text! as String,
+//            title: self.titleLbl.text! as String,
+//            url: self.urlStr
+//        )
+//        
+//        self.putBook(self.urlStr, parameters: book.toJSON()!);
     }
     
     private func putBook( url : String, parameters : JSON ){
         
-        PLAPIService.put( url, parameters: parameters, completion: {responsePackage -> Void in
-            
-            if((responsePackage.error) === nil){
-                print("put a book")
-            }
-            else{
-                print(responsePackage.error)
-            }
-        })
+//        PLAPIService.put( url, parameters: parameters, completion: {responsePackage -> Void in
+//            
+//            if((responsePackage.error) === nil){
+//                print("put a book")
+//            }
+//            else{
+//                print(responsePackage.error)
+//            }
+//        })
     }
 
     

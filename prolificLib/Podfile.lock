@@ -1,25 +1,33 @@
 PODS:
-  - Alamofire (1.2.3)
-  - Gloss (0.3.1):
-    - Gloss/Extensions (= 0.3.1)
-  - Gloss/Extensions (0.3.1)
+  - AFNetworking (2.6.0):
+    - AFNetworking/NSURLConnection (= 2.6.0)
+    - AFNetworking/NSURLSession (= 2.6.0)
+    - AFNetworking/Reachability (= 2.6.0)
+    - AFNetworking/Security (= 2.6.0)
+    - AFNetworking/Serialization (= 2.6.0)
+    - AFNetworking/UIKit (= 2.6.0)
+  - AFNetworking/NSURLConnection (2.6.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.0)
+  - AFNetworking/Security (2.6.0)
+  - AFNetworking/Serialization (2.6.0)
+  - AFNetworking/UIKit (2.6.0):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - Gloss (0.5.1)
 
 DEPENDENCIES:
-  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, commit `fd71afb3a0af2042b9f05a6b9f29317ad4903703`)
+  - AFNetworking (= 2.6.0)
   - Gloss (~> 0.3)
 
-EXTERNAL SOURCES:
-  Alamofire:
-    :commit: fd71afb3a0af2042b9f05a6b9f29317ad4903703
-    :git: https://github.com/Alamofire/Alamofire.git
-
-CHECKOUT OPTIONS:
-  Alamofire:
-    :commit: fd71afb3a0af2042b9f05a6b9f29317ad4903703
-    :git: https://github.com/Alamofire/Alamofire.git
-
 SPEC CHECKSUMS:
-  Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
-  Gloss: 4393347bea46ac05f2516179da5eb895b485d7d5
+  AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
+  Gloss: 66f3530e73d1018464e0d344a055898cba18c16f
 
 COCOAPODS: 0.38.2

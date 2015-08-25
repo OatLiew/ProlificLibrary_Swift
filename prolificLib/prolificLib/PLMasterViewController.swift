@@ -36,16 +36,24 @@ class PLMasterViewController: UITableViewController {
     // Mark: - Private Function
     
     private func getAllBooks(){
-        PLAPIService.get( {responsePackage -> Void in
-            if((responsePackage.error) === nil){
-                self.bookArrays = responsePackage.response as! [AnyObject]
-                self.tableView .reloadData()
+        
+        Request(endpoint: Endpoint.getAllBooks, method: Method.GET)
+            .response { (response: Response<PLBook>) -> Void in
                 
-            }
-            else{
-                print(responsePackage.error)
-            }
-        })
+                print(response)
+        }
+        
+//        PLAPIService.get( {responsePackage -> Void in
+//            if((responsePackage.error) === nil){
+//                self.bookArrays = responsePackage.response as! [AnyObject]
+//                self.tableView .reloadData()
+//                
+//            }
+//            else{
+//                print(responsePackage.error)
+//            }
+//        })
+        
     }
     
     // MARK: - UITableViewDataSource
