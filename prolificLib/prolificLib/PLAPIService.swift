@@ -21,7 +21,7 @@ final class PLAPIService {
             .request(.GET, URLString: PLEndPointConstants.getAllBooks)
             .responseJSON {(request, response, JSON, error) in
                 
-                let responsePackage = PLResponsePackage()
+                var responsePackage = PLResponsePackage()
                 responsePackage.response = JSON
                 responsePackage.success = true
                 responsePackage.error = error
@@ -35,7 +35,7 @@ final class PLAPIService {
             .request(.POST, URLString: PLEndPointConstants.getAllBooks, parameters: parameters)
             .responseJSON {(request, response, JSON, error) in
                 
-                let responsePackage = PLResponsePackage()
+                var responsePackage = PLResponsePackage()
                 responsePackage.response = JSON
                 responsePackage.success = true
                 responsePackage.error = error
@@ -49,7 +49,7 @@ final class PLAPIService {
             .request(.GET, URLString: PLEndPointConstants.baseURL + url)
             .responseJSON {(request, response, JSON, error) in
                 
-                let responsePackage = PLResponsePackage()
+                var responsePackage = PLResponsePackage()
                 responsePackage.response = JSON
                 responsePackage.success = true
                 responsePackage.error = error
@@ -63,7 +63,7 @@ final class PLAPIService {
             .request(.PUT, URLString: PLEndPointConstants.baseURL + url, parameters: parameters)
             .responseJSON {(request, response, JSON, error) in
                 
-                let responsePackage = PLResponsePackage()
+                var responsePackage = PLResponsePackage()
                 responsePackage.response = JSON
                 responsePackage.success = true
                 responsePackage.error = error

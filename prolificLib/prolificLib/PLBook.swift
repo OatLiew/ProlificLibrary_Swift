@@ -18,8 +18,19 @@ struct PLBook: Glossy {
     let title: String?
     let url: String?
     
-    // MARK: - Deserialization
+    init(author: String, categories: String, lastCheckedOut: String, lastCheckedOutBy: String, publisher: String, title: String, url: String?){
+        
+        self.author = author
+        self.categories = categories
+        self.lastCheckedOut = lastCheckedOut
+        self.lastCheckedOutBy = lastCheckedOutBy
+        self.publisher = publisher
+        self.title = title
+        self.url = url
+    }
     
+    
+    // MARK: - Deserialization
     init?(json: JSON) {
         self.author = "author" <~~ json
         self.categories = "categories" <~~ json

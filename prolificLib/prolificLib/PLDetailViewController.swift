@@ -94,16 +94,17 @@ class PLDetailViewController: UIViewController {
     
     private func putBook(lastCheckedOutBy : String){
         
-        let book = [
-            "author" : self.authorLbl.text! as String,
-            "categories" : self.categoriesLbl.text! as String,
-            "lastCheckedOut" : "",
-            "lastCheckedOutBy" : lastCheckedOutBy as String,
-            "publisher" : self.publisherLbl.text! as String,
-            "title" : self.titleLbl.text! as String
-        ]
+        let book = PLBook(
+            author: self.authorLbl.text! as String,
+            categories: self.categoriesLbl.text! as String,
+            lastCheckedOut: "",
+            lastCheckedOutBy: lastCheckedOutBy,
+            publisher: self.publisherLbl.text! as String,
+            title: self.titleLbl.text! as String,
+            url: self.urlStr
+        )
         
-        self.putBook(self.urlStr, parameters: book);
+        self.putBook(self.urlStr, parameters: book.toJSON()!);
     }
     
     private func putBook( url : String, parameters : JSON ){
@@ -112,7 +113,6 @@ class PLDetailViewController: UIViewController {
             
             if((responsePackage.error) === nil){
                 print("put a book")
-                
             }
             else{
                 print(responsePackage.error)

@@ -45,16 +45,16 @@ class PLAddBookViewController: UITableViewController {
         }
         else{
             
-            let book = [
-                "author" : self.author.text! as String,
-                "categories" : self.categories.text! as String,
-                "lastCheckedOut" : "",
-                "lastCheckedOutBy" : "",
-                "publisher" : self.publisher.text! as String,
-                "title" : self.bookTitle.text! as String
-            ]
-            
-            self.postBook(book)
+            let book = PLBook(
+                author: self.author.text! as String,
+                categories: self.categories.text! as String,
+                lastCheckedOut: "",
+                lastCheckedOutBy: "",
+                publisher: self.publisher.text! as String,
+                title: self.bookTitle.text! as String,
+                url: ""
+            )
+            self.postBook(book.toJSON()!)
         }
     }
     

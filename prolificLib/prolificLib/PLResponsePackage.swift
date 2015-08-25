@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class PLResponsePackage{
+struct PLResponsePackage{
     
     var success = false
     var response: AnyObject?
