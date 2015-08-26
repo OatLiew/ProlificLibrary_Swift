@@ -8,12 +8,12 @@
 
 internal struct PLBook: JSONSerializable {
     
-    let author: String?
+    let author: String
     let categories: String?
     let lastCheckedOut: String?
     let lastCheckedOutBy: String?
     let publisher: String?
-    let title: String?
+    let title: String
     let url: String?
 
     init(author: String, categories: String, lastCheckedOut: String, lastCheckedOutBy: String, publisher: String, title: String, url: String?){
@@ -30,23 +30,18 @@ internal struct PLBook: JSONSerializable {
     // MARK: - Deserialization
     init?(json: JSON) {
         guard   let author: String = json.valueFor("author"),
-                let categories: String = json.valueFor("categories"),
-                let lastCheckedOut: String = json.valueFor("lastCheckedOut"),
-                let lastCheckedOutBy: String = json.valueFor("lastCheckedOutBy"),
-                let publisher: String = json.valueFor("publisher"),
-                let title: String = json.valueFor("title"),
-                let url: String = json.valueFor("url")
+                let title: String = json.valueFor("title")
         else{
             return nil
         }
         
         self.author = author
-        self.categories = categories
-        self.lastCheckedOut = lastCheckedOut
-        self.lastCheckedOutBy = lastCheckedOutBy
-        self.publisher = publisher
+        self.categories = json.valueFor("categories")
+        self.lastCheckedOut = json.valueFor("lastCheckedOut")
+        self.lastCheckedOutBy = json.valueFor("lastCheckedOutBy")
+        self.publisher = json.valueFor("publisher")
         self.title = title
-        self.url = url
+        self.url = json.valueFor("url")
     }
 
     internal func JSONRepresentation() -> JSON? {

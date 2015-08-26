@@ -32,7 +32,6 @@
 		31E09C8F1B8CE3AB0040FFBD /* MutableJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E09C8A1B8CE3AB0040FFBD /* MutableJSON.swift */; };
 		31E09C931B8CE4FE0040FFBD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E09C921B8CE4FE0040FFBD /* Endpoint.swift */; };
 		31E09C951B8CEA780040FFBD /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E09C941B8CEA780040FFBD /* APIEnvironment.swift */; };
-		31F2E8691B8D0B51003D357A /* PLBookArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F2E8681B8D0B51003D357A /* PLBookArray.swift */; };
 		D8F76F19FB5879EC29CFBFD0 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5818BFE0766F976B2C1C8439 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -76,7 +75,6 @@
 		31E09C8A1B8CE3AB0040FFBD /* MutableJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MutableJSON.swift; path = Networking/JSON/MutableJSON.swift; sourceTree = "<group>"; };
 		31E09C921B8CE4FE0040FFBD /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Endpoint.swift; path = Networking/Endpoint.swift; sourceTree = "<group>"; };
 		31E09C941B8CEA780040FFBD /* APIEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIEnvironment.swift; path = Networking/APIEnvironment.swift; sourceTree = "<group>"; };
-		31F2E8681B8D0B51003D357A /* PLBookArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLBookArray.swift; sourceTree = "<group>"; };
 		5818BFE0766F976B2C1C8439 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF0A07FB66E4C8DA9D71026C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EE63284D9BADA344937CA28E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				3183735C1B8236CE00FF402C /* PLBook.swift */,
-				31F2E8681B8D0B51003D357A /* PLBookArray.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -428,7 +425,6 @@
 				31E09C8B1B8CE3AB0040FFBD /* APIResponseCollection.swift in Sources */,
 				31E09C821B8CE3910040FFBD /* Method.swift in Sources */,
 				31E09C931B8CE4FE0040FFBD /* Endpoint.swift in Sources */,
-				31F2E8691B8D0B51003D357A /* PLBookArray.swift in Sources */,
 				3183735D1B8236CE00FF402C /* PLBook.swift in Sources */,
 				31E09C8E1B8CE3AB0040FFBD /* JSONTransformer.swift in Sources */,
 				31E09C8C1B8CE3AB0040FFBD /* JSON.swift in Sources */,
