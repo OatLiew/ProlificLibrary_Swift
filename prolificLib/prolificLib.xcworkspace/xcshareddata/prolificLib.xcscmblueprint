@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1846B4715EA37EA96AEC86728EB3D4F9748C826A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1846B4715EA37EA96AEC86728EB3D4F9748C826A" : 0,
+    "2BD58CA1299D3F2858D935B7777B59B8ADA0A49F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0386ECEE-C13C-4CE9-8FCE-BEE3506DF780",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1846B4715EA37EA96AEC86728EB3D4F9748C826A" : "ProlificLibrary_Swift",
+    "2BD58CA1299D3F2858D935B7777B59B8ADA0A49F" : "..\/..\/Downloads\/swift-networking"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "prolificLib",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 203,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "prolificLib\/prolificLib.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/OatLiew\/ProlificLibrary_Swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1846B4715EA37EA96AEC86728EB3D4F9748C826A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:Haud\/swift-networking.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2BD58CA1299D3F2858D935B7777B59B8ADA0A49F"
+    }
+  ]
+}

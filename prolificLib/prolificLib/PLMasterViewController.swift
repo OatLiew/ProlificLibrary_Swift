@@ -38,7 +38,7 @@ class PLMasterViewController: UITableViewController {
     private func getAllBooks(){
         
         Request(endpoint: Endpoint.getAllBooks, method: Method.GET)
-            .response { (response: Response<PLBook>) -> Void in
+            .response { (response: APIResponseCollection<PLBookArray>) -> Void in
                 
                 print(response)
         }

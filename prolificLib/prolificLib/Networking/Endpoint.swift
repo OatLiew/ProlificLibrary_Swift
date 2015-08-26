@@ -8,5 +8,5 @@
 
 internal enum Endpoint: String
 {
-    case getAllBooks = "books/1"
+    case getAllBooks = "books"
 }
